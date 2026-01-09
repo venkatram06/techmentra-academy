@@ -1,0 +1,304 @@
+/* =========================
+   RESET & BASE
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f6f8;
+    color: #333;
+    min-height: 100vh;
+}
+
+/* =========================
+   HEADER
+========================= */
+.site-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 30px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+}
+
+.brand h1 {
+    font-size: 28px;
+    margin: 0;
+}
+
+.tech {
+    color: #0d6efd;   /* Blue */
+}
+
+.academy {
+    color: #f97316;   /* Orange */
+}
+
+.tagline {
+    font-size: 15px;
+    font-weight: 600;
+    color: #555;
+    margin-top: 4px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    background-color: #0d6efd;
+    padding: 12px 30px;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    text-decoration: underline;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+.container {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-title {
+    color: #0d6efd;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   BANNER (HOME)
+========================= */
+.banner {
+    margin-top: 20px;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+}
+
+/* =========================
+   COURSES PAGE
+========================= */
+.course-card {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.course-card h3 {
+    color: #0d6efd;
+    margin-bottom: 10px;
+}
+
+.course-card ul {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.enroll-btn {
+    display: inline-block;
+    padding: 8px 14px;
+    background-color: #0d6efd;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.enroll-btn:hover {
+    background-color: #084298;
+}
+
+/* =========================
+   FORMS (CONTACT & PAYMENT)
+========================= */
+form {
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 6px;
+    max-width: 500px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button {
+    margin-top: 20px;
+    padding: 10px 18px;
+    background-color: #0d6efd;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #084298;
+}
+
+/* =========================
+   STATUS MESSAGE (ENROLL)
+========================= */
+#status {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Smooth hover for buttons */
+button,
+.enroll-btn {
+    transition: all 0.3s ease;
+}
+
+button:hover,
+.enroll-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Smooth hover for course cards */
+.course-card {
+    transition: all 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+    /* Header */
+    .site-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo {
+        width: 50px;
+    }
+
+    .brand h1 {
+        font-size: 22px;
+    }
+
+    .tagline {
+        font-size: 13px;
+    }
+
+    /* Navbar */
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar a {
+        margin: 6px 0;
+        display: block;
+    }
+
+    /* Content */
+    .container {
+        padding: 20px;
+    }
+
+    /* Banner image */
+    .banner img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Course cards */
+    .course-card {
+        padding: 15px;
+    }
+
+    /* Forms */
+    form {
+        width: 100%;
+    }
+}
+
+/* About page text spacing */
+.about-text p {
+    margin-bottom: 16px;   /* space between lines */
+    line-height: 1.7;      /* comfortable reading */
+}
+
+/* Home page main heading */
+.container h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #0a58ca;        /* highlight blue */
+    font-weight: 700;
+}
+
+/* Home page paragraphs */
+.container p {
+    margin-bottom: 22px;  /* space between lines */
+    line-height: 1.9;     /* more breathing space */
+    font-size: 16.5px;
+    color: #333;
+}
+
+/* Optional highlight box effect for home content */
+.container {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 10px;
+}
+
+.intro-text {
+    font-size: 17.5px;
+    font-weight: 600;
+    color: #222;
+    border-left: 4px solid #0a58ca;
+    padding-left: 15px;
+}

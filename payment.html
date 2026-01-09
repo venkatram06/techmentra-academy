@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enroll | TechMentra Academy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+    <img src="images/tm.png" alt="TechMentra Logo" class="logo">
+
+    <div class="brand">
+        <h1>
+            <span class="tech">TechMentra</span>
+            <span class="academy">Academy</span>
+        </h1>
+        <p class="tagline">Learn with the Right Guidance</p>
+    </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="courses.html">Courses</a>
+    <a href="contact.html">Contact</a>
+    <a href="payment.html" class="active">Enroll Now</a>
+</nav>
+
+<!-- CONTENT -->
+<main class="container">
+    <h2 class="page-title">Confirm Your Enrollment</h2>
+
+    <!-- SELECTED COURSE INFO -->
+    <p id="courseInfo"></p>
+
+    <!-- ENROLLMENT FORM -->
+    <form onsubmit="event.preventDefault(); confirmEnrollment();">
+
+        <label>Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <label>Email</label>
+        <input type="email" id="email" placeholder="Enter your email">
+
+        <label>Mobile Number</label>
+        <input type="text" id="mobile" placeholder="Enter your mobile number">
+
+        <h3>Sample Payment (Demo Only)</h3>
+
+        <img src="images/qr.png" alt="Sample QR Code" width="200">
+
+        <p>
+            Sample UPI ID: <b>techmentra.academy@upi</b><br>
+            <small>(This is for demo purpose only. No real payment required.)</small>
+        </p>
+
+        <button type="submit">Confirm Enrollment</button>
+    </form>
+
+    <!-- STATUS MESSAGE -->
+    <div id="status"></div>
+</main>
+
+<!-- JAVASCRIPT -->
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const course = params.get("course");
+    const price = params.get("price");
+
+    const courseInfo = document.getElementById("courseInfo");
+
+    if (course && price) {
+        courseInfo.innerHTML =
+            "<b>Selected Course:</b> " + course + "<br>" +
+            "<b>Course Fee:</b> ₹" + price;
+    } else {
+        courseInfo.innerHTML =
+            "<b>Selected Course:</b> Not specified";
+    }
+
+    function confirmEnrollment() {
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const mobile = document.getElementById("mobile").value.trim();
+        const status = document.getElementById("status");
+
+        if (name && email && mobile) {
+            status.style.color = "green";
+            status.innerHTML = `
+                <h3>✅ Enrollment Successful! 🎉</h3>
+                <p>
+                    You have been successfully enrolled in the
+                    <b>${course || "selected"}</b> course.<br>
+                    Thank you for choosing <b>TechMentra Academy</b>.
+                </p>
+            `;
+        } else {
+            status.style.color = "red";
+            status.innerHTML = `
+                <h3>❌ Enrollment Failed</h3>
+                <p>Please fill all required details to continue.</p>
+            `;
+        }
+    }
+</script>
+
+<footer class="footer">
+    © 2026 TechMentra Academy | All Rights Reserved
+</footer>
+
+</body>
+</html>
